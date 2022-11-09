@@ -1,3 +1,16 @@
+## Installation:
+
+* npx create-react-app
+* npm install react-router-dom
+* npm install react-bootstrap bootstrap
+* npm install react-hot-toast
+* npm install -S react-router-bootstrap
+* npm install firebase
+* npm install react-hook-form
+* npm install react-icons --save
+* npm install react-loader-spinner --save
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
