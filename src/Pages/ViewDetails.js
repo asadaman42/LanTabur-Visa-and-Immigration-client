@@ -44,13 +44,14 @@ const ViewDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.acknowledged) {
-                    alert('Order placed successfully')
+                    alert('review added successfully')
+                    const updatedReviews = [...reviews, reviewData];
+                    setReviews(updatedReviews);
                     e.target.reset();
                 }
             })
-            .catch(er => console.error(er));
+            .catch(err => console.error(err));
 
     };
 
@@ -62,8 +63,6 @@ const ViewDetails = () => {
         else {
             setEnable(false);
         }
-
-
     }
 
     return (
@@ -109,7 +108,7 @@ const ViewDetails = () => {
             <Container className='m-3 p-2 bg-secondary bg-opacity-25'>
                 {
                     reviews?.map(review =>
-                        <Row className='bg-primary bg-opacity-25 m-2'>
+                        <Row key={review._id} className='bg-primary bg-opacity-25 m-2'>
                             <Col xs={3} md={2} lg={1}>
                                 <Row>
                                     <Col xs={{ span: 9, offset: 2 }} >
