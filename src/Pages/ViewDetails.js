@@ -98,8 +98,10 @@ const ViewDetails = () => {
                         </>
                         :
                         <>
-                            <Link to='/login'> <Button className='m-1'>Log In</Button></Link>
-                            <Link to='/register'> <Button className='m-1'> Register </Button> </Link>
+                            <p>Please <Link to='/login'> <Button className='m-1'>Log In</Button></Link> to add a review, or <Link to='/register'> <Button className='m-1'> Register </Button> </Link></p>
+                
+                            
+                            
                         </>
 
                 }

@@ -12,11 +12,6 @@ const ContexSupplier = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
 
-    const githubLogInProvider = (provider) => {
-        return signInWithPopup(auth, provider);
-    };
-
-
     const googleLogInProvider = (provider) => {
         setLoading(true);
         return signInWithPopup(auth, provider);
@@ -25,12 +20,7 @@ const ContexSupplier = ({ children }) => {
     const emailLoginProvider = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
-    }
-
-    const emailVerify = () => {
-        return sendEmailVerification(auth.currentUser);
-    };
-
+    }  
 
     const logOut = () => {
         setLoading(true);
@@ -46,54 +36,26 @@ const ContexSupplier = ({ children }) => {
         updateProfile(auth.currentUser, photoAndName);
     };
 
-
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (presentStudent) => {
-            // if(presentStudent === null || presentStudent.emailVerified){
-            //     setUser(presentStudent);
-            // }
+        const unsubscribe = onAuthStateChanged(auth, (presentStudent) => {            
             setUser(presentStudent);
             setLoading(false);
         });
-
         return () => {
             unsubscribe();
         };
 
     }, []);
 
-
-
-    const [mode, setmode] = useState("light");
-
-    const toggleMode = () => {
-        if (mode === "light") {
-            setmode("dark");
-            document.body.style.backgroundColor = "#050122"; //'#042743'
-
-        }
-
-        else {
-            setmode("light");
-            document.body.style.backgroundColor = "white";
-        }
-    };
-
-
-
     const contextInformation = {
-        user,
-        toggleMode,
-        mode,
+        user,        
         googleLogInProvider,
         logOut,
         createUserByEmailAndPassword,
         emailLoginProvider,
         loading,
         setLoading,
-        updatePhotoAndName,
-        emailVerify,
-        githubLogInProvider,
+        updatePhotoAndName,        
         setUser
     };
 

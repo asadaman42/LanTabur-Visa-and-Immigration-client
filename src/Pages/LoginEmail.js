@@ -24,12 +24,8 @@ const LoginEmail = () => {
                 const user = result.user;
                 e.target.reset();
                 setError('');
-                if (user.emailVerified) {
-                    navigate(from, { replace: true });                    
-                }
-                else {
-                    toast.error('email not verified')
-                }
+                navigate(from, { replace: true });
+                toast.success('Login Successful');                
             })
             .catch(error => {
                 console.error(error)
