@@ -18,7 +18,8 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Homepage></Homepage>
+                element: <Homepage></Homepage>,
+                loader: () => fetch('http://localhost:5000/servicess')
             },
             {
                 path: '/login',
@@ -35,17 +36,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('https://11th-assignment-08-11-22-server.vercel.app/services')
+                loader: () => fetch('https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services')
             },
             {
                 path: '/services/:id',
                 element: <ViewDetails></ViewDetails>,
-                loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services/${params.id}`)
             },
             {
                 path: '/checkout/:id',
                 element: <Protected> <CheckOut></CheckOut> </Protected>,
-                loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services/${params.id}`)
 
             },
             {
