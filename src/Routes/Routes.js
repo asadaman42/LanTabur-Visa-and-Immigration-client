@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Blog from "../Pages/Blog";
-import CheckOut from "../Pages/CheckOut";
 import Services from "../Pages/Services";
 import Homepage from "../Pages/Homepage";
 import LogIn from "../Pages/LogIn";
@@ -65,13 +64,6 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/editreview/${params.id}`)
                 
                 
-            },
-            
-            {
-                path: '/checkout/:id',
-                element: <Protected> <CheckOut></CheckOut> </Protected>,
-                loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services/${params.id}`)
-
             },
             {
                 path: '/blog',

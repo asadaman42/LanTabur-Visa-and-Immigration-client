@@ -2,18 +2,21 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+
 
 const AddService = () => {
+
+
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
 
-        const {serviceName, description, price, imgURL} = data;
+        const { serviceName, description, price, imgURL } = data;
 
         const newService = {
             serviceName,
-            description, 
+            description,
             price,
             imgURL
         }
@@ -38,7 +41,11 @@ const AddService = () => {
 
 
     return (
+
         <div>
+            <Helmet>
+                <title>Add Service</title>
+            </Helmet>
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Service Name</Form.Label>
@@ -64,12 +71,12 @@ const AddService = () => {
                 <Form.Group className="mb-3" controlId="photoURL">
                     <Form.Label>Photo URL</Form.Label>
                     <Form.Control type="text" placeholder='Your Photo URL' {...register("imgURL")} />
-                </Form.Group>              
+                </Form.Group>
 
                 <Button variant="primary" type="submit" className="mb-3">
                     Add Service
-                </Button>            
-            </Form> 
+                </Button>
+            </Form>
         </div>
     );
 };
