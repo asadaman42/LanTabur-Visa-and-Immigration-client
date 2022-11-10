@@ -21,12 +21,7 @@ const Homepage = () => {
                         services.map(service =>
                             <Service
                                 key={service._id}
-                                service={service}
-                            // id = {service._id}
-                            // name={service.serviceName}
-                            // description={service.description}
-                            // price={service.price}
-                            // imgURL={service.imgURL}
+                                service={service}                           
                             ></Service>)
                     }
                 </Row>

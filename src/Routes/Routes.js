@@ -12,6 +12,7 @@ import ViewDetails from "../Pages/ViewDetails";
 import Protected from "./Protected";
 import MyReviews from "../Pages/MyReviews";
 import EditReview from "../Pages/EditReview";
+import AddService from "../Pages/AddService";
 
 export const routes = createBrowserRouter([
     {
@@ -49,6 +50,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/myreviews',
                 element: <Protected><MyReviews></MyReviews></Protected>
+                
+                
+            },
+            {
+                path: '/addservice',
+                element: <Protected><AddService></AddService></Protected>
                 
                 
             },
