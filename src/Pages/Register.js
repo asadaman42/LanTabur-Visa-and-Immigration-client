@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -9,7 +10,7 @@ import { UniversalContext } from '../ContexSupplier/ContexSupplier';
 
 
 const Register = () => {
-    const { createUserByEmailAndPassword, updatePhotoAndName} = useContext(UniversalContext);
+    const { createUserByEmailAndPassword, updatePhotoAndName } = useContext(UniversalContext);
     const [checked, setChecked] = useState(false);
     const [error, setError] = useState('');
     const { register, handleSubmit } = useForm();
@@ -19,10 +20,10 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 e.target.reset();
-                setError('');                
+                setError('');
                 handleUpdatePhotoAndName(name, PhotoURL);
                 toast.success('Successfully Registered');
-                <Navigate to = '/login'></Navigate>
+                <Navigate to='/login'></Navigate>
             })
 
             .catch(error => {
@@ -41,6 +42,10 @@ const Register = () => {
 
     return (
         <div className='w-75 mx-auto mt-5'>
+
+            <Helmet>
+                <title>Registration </title>
+            </Helmet>
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Name</Form.Label>

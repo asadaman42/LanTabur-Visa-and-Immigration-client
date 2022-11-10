@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import React, { useContext, useEffect, useState } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
@@ -40,6 +41,10 @@ const MyReviews = () => {
 
     return (
         <Container className='my-4 py-2 bg-secondary bg-opacity-25'>
+
+            <Helmet>
+                <title>My Reviews</title>
+            </Helmet>
             {
                 myReviews?.length > 0 ?
                     <Container>
@@ -60,7 +65,7 @@ const MyReviews = () => {
                                                 <p>{review.text}</p>
                                             </Col>
                                             <Col className='my-auto'>
-                                            <h5> Service Name: {review.serviceName}</h5>
+                                                <h5> Service Name: {review.serviceName}</h5>
                                             </Col>
                                         </Row>
                                     </Col>

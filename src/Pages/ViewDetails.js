@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async'; import React, { useContext, useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Figure, Form, Image, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
@@ -29,7 +29,7 @@ const ViewDetails = () => {
 
         const reviewData = {
             serviceID: _id,
-            userID: user?.uid, 
+            userID: user?.uid,
             text: data?.review,
             userName: user?.displayName,
             userImage: user?.photoURL,
@@ -69,6 +69,10 @@ const ViewDetails = () => {
 
     return (
         <Container>
+            <Helmet>
+                <title>{serviceName}</title>
+            </Helmet>
+            
             <Container className='m-2 p-2'>
                 <Card className='bg-secondary bg-opacity-25'>
                     <Card.Header as="h3">{serviceName} </Card.Header>
@@ -101,9 +105,9 @@ const ViewDetails = () => {
                         :
                         <>
                             <p>Please <Link to='/login'> <Button className='m-1'>Log In</Button></Link> to add a review, or <Link to='/register'> <Button className='m-1'> Register </Button> </Link></p>
-                
-                            
-                            
+
+
+
                         </>
 
                 }

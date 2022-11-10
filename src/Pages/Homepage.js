@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 import HomepageStatistics from './HomepageStatistics';
 import HomepageCarousel from './HomepageCarousel';
 import Service from './Service';
+import {Helmet} from 'react-helmet-async';
 
 const Homepage = () => {
     const services = useLoaderData();
@@ -13,6 +14,10 @@ const Homepage = () => {
 
     return (
         <div>
+            
+            <Helmet>
+                <title>LanTabur Home Page</title>
+            </Helmet>
             <HomepageCarousel></HomepageCarousel>
 
             <Container className="my-5 py-5 bg-secondary bg-opacity-25 text-center">
@@ -21,7 +26,7 @@ const Homepage = () => {
                         services.map(service =>
                             <Service
                                 key={service._id}
-                                service={service}                           
+                                service={service}
                             ></Service>)
                     }
                 </Row>

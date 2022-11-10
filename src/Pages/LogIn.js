@@ -1,7 +1,8 @@
+import {Helmet} from 'react-helmet-async';
 import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
-import { Button, ButtonGroup} from 'react-bootstrap';
+import { Button, ButtonGroup } from 'react-bootstrap';
 import { FaGoogle } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
@@ -10,10 +11,10 @@ import { UniversalContext } from '../ContexSupplier/ContexSupplier';
 
 const LogIn = () => {
 
-    const { googleLogInProvider} = useContext(UniversalContext)
+    const { googleLogInProvider } = useContext(UniversalContext)
 
     const googleProvider = new GoogleAuthProvider();
-    
+
 
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -26,11 +27,15 @@ const LogIn = () => {
                 console.log(user);
                 navigate(from, { replace: true })
             })
-            .catch(error => console.error(error)); 
-    }; 
+            .catch(error => console.error(error));
+    };
 
     return (
         <div className='text-center mx-auto my-5'>
+            
+            <Helmet>
+                <title>Blog</title>
+            </Helmet>
             <ButtonGroup vertical className='my-5'>
                 <Link to='/loginemail'> <Button className='mb-3 mt-5'> <HiOutlineMail></HiOutlineMail>  Sign in with e-mail & password  </Button></Link>
                 <Button onClick={googleLogIn} className='mb-3'> <FaGoogle></FaGoogle> sign in with Google </Button>
