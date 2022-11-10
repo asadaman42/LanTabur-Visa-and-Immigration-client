@@ -76,7 +76,7 @@ const Header = () => {
                                 <Nav.Link className='my-auto' href="">
                                     {
                                         user ?
-                                            <Image data-tip={user?.displayName} style={{ height: '30px', width: '30px' }} roundedCircle src={user?.photoURL} referrerPolicy='no-referrer' /> :
+                                            <Image style={{ height: '30px', width: '30px' }} roundedCircle src={user?.photoURL} referrerPolicy='no-referrer' /> :
                                             <HiOutlineUser />
                                     }
                                 </Nav.Link>
