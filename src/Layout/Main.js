@@ -3,26 +3,22 @@ import { Col, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
-import LeftSideNav from '../Components/LeftSideNav';
+
 
 const Main = () => {
     return (
-        <div>
-            <Header></Header>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <Row xs={1}>
+            <Col className='sticky-top'>
+                <Header></Header>                
+            </Col>
+            <Col className='position-sticky'>                
+                <Outlet></Outlet>                
+            </Col>
+            <Col className='sticky-bottom'>                
+                <Footer></Footer>
+            </Col>
 
-            {/* <Row className='mx-auto'>
-                <Col md="3" className='d-none d-md-block'>
-                    <LeftSideNav></LeftSideNav>
-                </Col>
-                <Col md="8" className='mx-3'>
-                    <Outlet></Outlet>
-                </Col>
-            </Row> */}
-
-
-        </div>
+        </Row>
     );
 };
 
