@@ -1,29 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 
-const MyReviews = () => {        
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { UniversalContext } from '../ContexSupplier/ContexSupplier';
+
+
+const MyReviews = () => {   
+    const {user} = useContext(UniversalContext);     
     const [myReviews, setMyReviews] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('genius-token')}`
-            }
-        })
-            .then(res => {
-                if (res.status === 401 || res.status === 403) {
-                    return logOut();
-                }
-                return res.json();
-            })
-            .then(data => {
-                setMyReviews(data);
-            })
-    }, [user?.email, logOut])
+        fetch(`http://localhost:5000/myreviews/${user?.uid}`)
+            .then(res => res.json())
+            .then(data => setMyReviews(data))
+    }, [user?.uid]);
 
-    setMyReviews(loaderData);
+   
     const deleteFromDB = id => {
         const proceed = window.confirm('Do you really want to remove your review?');
         if (proceed) {

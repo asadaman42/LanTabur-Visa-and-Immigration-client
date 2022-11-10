@@ -32,7 +32,7 @@ const Homepage = () => {
                 </Row>
 
                 <Link to={`/services`}>
-                    <Button variant="primary" className='w-50 mt-5'> Service Details</Button>
+                    <Button variant="primary" className='w-50 mt-5'> All Services </Button>
                 </Link>
             </Container>
 

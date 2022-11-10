@@ -88,7 +88,7 @@ const Header = () => {
                                         <>
                                             <span className='m-2'>{user?.displayName}</span>
                                             <Button onClick={signOut} variant='secondary'> Sign Out</Button>
-                                            <Link to={`/review/${user?.uid}`}> <Button> My Reviews </Button></Link>
+                                            <Link to={`/myreviews`}> <Button> My Reviews </Button></Link>
                                             <Link to='/addservice'> <Button> Add Service </Button></Link>
                                         </>
                                         :

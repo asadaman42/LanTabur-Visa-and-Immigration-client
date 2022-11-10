@@ -9,7 +9,7 @@ import { UniversalContext } from '../ContexSupplier/ContexSupplier';
 
 
 const Register = () => {
-    const { createUserByEmailAndPassword, updatePhotoAndName, emailVerify } = useContext(UniversalContext);
+    const { createUserByEmailAndPassword, updatePhotoAndName} = useContext(UniversalContext);
     const [checked, setChecked] = useState(false);
     const [error, setError] = useState('');
     const { register, handleSubmit } = useForm();
@@ -19,10 +19,9 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 e.target.reset();
-                setError('');
-                handleEmailVerify();
+                setError('');                
                 handleUpdatePhotoAndName(name, PhotoURL);
-                toast.success('verification mail sent to your email address');
+                toast.success('Successfully Registered');
                 <Navigate to = '/login'></Navigate>
             })
 
@@ -31,14 +30,6 @@ const Register = () => {
                 setError(error.message);
             })
     };
-
-    const handleEmailVerify = () => {
-        emailVerify()
-            .then(() => { })
-            .catch(error => console.error(error));
-
-    };
-
 
     const handleUpdatePhotoAndName = (name, PhotoURL) => {
         updatePhotoAndName({ displayName: name, PhotoURL: PhotoURL });

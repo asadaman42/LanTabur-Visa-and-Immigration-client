@@ -22,31 +22,18 @@ const LoginEmail = () => {
         emailLoginProvider(email, password)
             .then(result => {
                 const user = result.user;
-
-                fetch('http://localhost:5000/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user.email)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        localStorage.setItem('LanTaburToken', data.token);
-                        e.target.reset();
-                        setError('');
-                        navigate(from, { replace: true });
-                        toast.success('Login Successful');
-                    });
-
+                e.target.reset();
+                setError('');
+                navigate(from, { replace: true });
+                toast.success('Login Successful');                
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message);
             })
-            .finally(() => {
+            .finally( () => {
                 setLoading(false);
-
+                
             })
     }
 
