@@ -51,7 +51,7 @@ const Header = () => {
                                 height="30"
                                 className="d-inline-block align-top"
                             />{' '}
-                            LanTabur Office Services
+                            LanTabur Visa and Immigration
                         </Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
