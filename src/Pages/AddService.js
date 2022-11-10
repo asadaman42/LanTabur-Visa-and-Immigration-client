@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const AddService = () => {
@@ -27,7 +28,7 @@ const AddService = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    alert('Service added successfully')                    
+                    toast.success('Service added successfully');
                     e.target.reset();
                 }
             })
@@ -66,7 +67,7 @@ const AddService = () => {
                 </Form.Group>              
 
                 <Button variant="primary" type="submit" className="mb-3">
-                    Register
+                    Add Service
                 </Button>            
             </Form> 
         </div>

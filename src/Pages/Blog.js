@@ -4,38 +4,38 @@ function Blog() {
   return (
     <Accordion defaultActiveKey="0" flush className='m-4 p-2' >
       <Accordion.Item eventKey="0">
-        <Accordion.Header> what is cors?</Accordion.Header>
+        <Accordion.Header> Difference between SQL and NoSQL</Accordion.Header>
         <Accordion.Body>
-          Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served.
+
+          <h5>SQL is the programming language used to interface with relational databases. (Relational databases model data as records in rows and tables with logical links between them). NoSQL is a class of DBMs that are non-relational and generally do not use SQL.</h5>
+          <p>There are five practical differences between SQL and NoSQL:</p>
+          <ol>
+            <li>Language</li>
+            <li>Scalability</li>
+            <li>Structure</li>
+            <li>Properties</li>
+            <li>Support and communities</li>
+          </ol>
+
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Why are you using firebase? What other options do you have to implement authentication?</Accordion.Header>
+        <Accordion.Header>How JWT (JSON Web Token) authentication works?</Accordion.Header>
         <Accordion.Body>
-          Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more. Here are some of the alternatives.
-
-          <ul>
-            <li>MongoDB</li>
-            <li>Couchbase Server</li>
-            <li>Oracle Database</li>
-            <li>Amazon Redshift</li>
-            <li>DataStax Enterprise</li>
-            <li>Redis Enterprise Cloud</li>
-            <li>Cloudera Enterprise Data Hub</li>
-            <li>Db2</li>
-          </ul>
+          <p>JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as JSON object.</p>
+          <p>It is compact, readable and digitally signed using a private key/ or a public key pair by the Identity Provider(IdP).</p>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
-        <Accordion.Header>How does the private route work?</Accordion.Header>
+        <Accordion.Header>Differences Between Node.js and JavaScript?</Accordion.Header>
         <Accordion.Body>
-          The react private route component renders child components ( children ) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.
+        JavaScript is a simple programming language that can be used with any browser that has the JavaScript Engine installed. Node.js, on the other hand, is an interpreter or execution environment for the JavaScript programming language. It requires libraries that can be conveniently accessed from JavaScript programming to be more helpful.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
-        <Accordion.Header> What is Node? How does Node work?</Accordion.Header>
+        <Accordion.Header>How does NodeJS handle multiple requests at the same time?</Accordion.Header>
         <Accordion.Body>
-          It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node. js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive.
+        NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them.
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

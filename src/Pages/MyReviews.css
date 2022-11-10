@@ -1,0 +1,13 @@
+.container2 {
+    height: 100vh;
+    position: relative;
+    border: 3px solid green;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50vh;
+    left: 25vw;
+    
+}

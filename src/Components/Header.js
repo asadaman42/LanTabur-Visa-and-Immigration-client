@@ -85,11 +85,11 @@ const Header = () => {
                             <>
                                 {
                                     user?.uid ?
-                                        <>
-                                            <span className='m-2'>{user?.displayName}</span>
-                                            <Button onClick={signOut} variant='secondary'> Sign Out</Button>
-                                            <Link to={`/myreviews`}> <Button> My Reviews </Button></Link>
-                                            <Link to='/addservice'> <Button> Add Service </Button></Link>
+                                        <>                                            
+                                            <h4 className='my-auto'>{user?.displayName}</h4>                                            
+                                            <Link to={`/myreviews`}> <Button className="m-2"> My Reviews </Button></Link>
+                                            <Link to='/addservice'> <Button className="m-2"> Add Service </Button></Link>
+                                            <Button onClick={signOut} className="m-2"> Sign Out</Button>
                                         </>
                                         :
                                         <>

@@ -34,6 +34,7 @@ const ViewDetails = () => {
             userName: user?.displayName,
             userImage: user?.photoURL,
             userEmail: user?.email,
+            serviceName
         }
 
         fetch('https://11th-assignment-08-11-22-server-asadaman42.vercel.app/reviews', {
