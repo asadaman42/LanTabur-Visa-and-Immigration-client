@@ -11,6 +11,7 @@ import Unhandled from "../Pages/Unhandled";
 import ViewDetails from "../Pages/ViewDetails";
 import Protected from "./Protected";
 import MyReviews from "../Pages/MyReviews";
+import EditReview from "../Pages/EditReview";
 
 export const routes = createBrowserRouter([
     {
@@ -48,6 +49,13 @@ export const routes = createBrowserRouter([
             {
                 path: '/myreviews',
                 element: <Protected><MyReviews></MyReviews></Protected>
+                
+                
+            },
+            {
+                path: '/editreview/:id',
+                element: <Protected><EditReview></EditReview></Protected>,
+                loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/editreview/${params.id}`)
                 
                 
             },

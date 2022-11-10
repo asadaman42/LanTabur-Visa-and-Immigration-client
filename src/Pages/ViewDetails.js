@@ -36,7 +36,7 @@ const ViewDetails = () => {
             userEmail: user?.email,
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://11th-assignment-08-11-22-server-asadaman42.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
