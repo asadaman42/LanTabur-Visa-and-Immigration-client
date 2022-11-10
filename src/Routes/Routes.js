@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import Unhandled from "../Pages/Unhandled";
 import ViewDetails from "../Pages/ViewDetails";
 import Protected from "./Protected";
+import MyReviews from "../Pages/MyReviews";
 
 export const routes = createBrowserRouter([
     {
@@ -44,6 +45,13 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services/${params.id}`)
                 
             },
+            {
+                path: '/review/:id',
+                element: <MyReviews></MyReviews>,
+                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+                
+            },
+            
             {
                 path: '/checkout/:id',
                 element: <Protected> <CheckOut></CheckOut> </Protected>,

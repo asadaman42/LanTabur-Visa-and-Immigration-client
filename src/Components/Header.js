@@ -32,7 +32,7 @@ const Header = () => {
 
     return (
         <div>
-            
+
 
 
             <Navbar
@@ -70,8 +70,6 @@ const Header = () => {
                             </LinkContainer>
                         </Nav>
                         <Nav>
-                            <Form.Switch className='my-auto' onClick={toggleMode} id="custom-switch" label="Dark Mode" />
-
                             <LinkContainer to="/">
                                 <Nav.Link className='my-auto' href="">
                                     {
@@ -90,6 +88,8 @@ const Header = () => {
                                         <>
                                             <span className='m-2'>{user?.displayName}</span>
                                             <Button onClick={signOut} variant='secondary'> Sign Out</Button>
+                                            <Link to={`/review/${user?.uid}`}> <Button> My Reviews </Button></Link>
+                                            <Link to='/addservice'> <Button> Add Service </Button></Link>
                                         </>
                                         :
                                         <>
@@ -99,7 +99,7 @@ const Header = () => {
 
                                 }
                             </>
-                            
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

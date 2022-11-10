@@ -19,7 +19,7 @@ const ViewDetails = () => {
     const [reviews, setReviews] = useState();
 
     useEffect(() => {
-        fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/review/${_id}`)
+        fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [_id]);
@@ -29,6 +29,7 @@ const ViewDetails = () => {
 
         const reviewData = {
             serviceID: _id,
+            userID: user?.uid, 
             text: data?.review,
             userName: user?.displayName,
             userImage: user?.photoURL,
