@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import Service from './Service';
 
@@ -8,7 +8,7 @@ const Services = () => {
     
     
     return (
-        <div className='mx-5 my-5'>
+        <Container>
             <h4 className='text-center my-5'>
                 All {services.length} services.
             </h4>
@@ -26,7 +26,7 @@ const Services = () => {
                         ></Service>)
                 }
             </Row>
-        </div>
+        </Container>
     );
 };
 

@@ -9,6 +9,7 @@
 * npm install react-hook-form
 * npm install react-icons --save
 * npm install react-loader-spinner --save
+* npm i react-helmet-async
 
 
 # Getting Started with Create React App
