@@ -13,7 +13,7 @@ const MyReviews = () => {
     const [myReviews, setMyReviews] = useState();
 
     useEffect(() => {
-        fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/myreviews/${user?.uid}`)
+        fetch(`https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/myreviews/${user?.uid}`)
             .then(res => res.json())
             .then(data => setMyReviews(data))
     }, [user?.uid]);
@@ -22,7 +22,7 @@ const MyReviews = () => {
     const deleteFromDB = id => {
         const proceed = window.confirm('Do you really want to remove your review?');
         if (proceed) {
-            fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/reviews/${id}`, {
+            fetch(`https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

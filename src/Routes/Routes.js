@@ -21,7 +21,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Homepage></Homepage>,
-                loader: () => fetch('https://11th-assignment-08-11-22-server-asadaman42.vercel.app/servicess')
+                loader: () => fetch('https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/servicess')
             },
             {
                 path: '/login',
@@ -38,12 +38,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services')
+                loader: () => fetch('https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/services')
             },
             {
                 path: '/services/:id',
                 element: <ViewDetails></ViewDetails>,
-                loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/services/${params.id}`)
                 
             },
             {
@@ -61,7 +61,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/editreview/:id',
                 element: <Protected><EditReview></EditReview></Protected>,
-                loader: ({ params }) => fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/editreview/${params.id}`)
+                loader: ({ params }) => fetch(`https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/editreview/${params.id}`)
                 
                 
             },

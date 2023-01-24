@@ -13,7 +13,7 @@ const EditReview = () => {
 
     const onSubmit = (data) => {
         console.log(data)
-        fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/reviews/${_id}`, {
+        fetch(`https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/reviews/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

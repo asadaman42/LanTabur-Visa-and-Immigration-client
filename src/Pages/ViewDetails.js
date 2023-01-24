@@ -19,7 +19,7 @@ const ViewDetails = () => {
     const [reviews, setReviews] = useState();
 
     useEffect(() => {
-        fetch(`https://11th-assignment-08-11-22-server-asadaman42.vercel.app/reviews/${_id}`)
+        fetch(`https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [_id]);
@@ -37,7 +37,7 @@ const ViewDetails = () => {
             serviceName
         }
 
-        fetch('https://11th-assignment-08-11-22-server-asadaman42.vercel.app/reviews', {
+        fetch('https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

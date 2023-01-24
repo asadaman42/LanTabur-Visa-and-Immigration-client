@@ -21,7 +21,7 @@ const AddService = () => {
             imgURL
         }
 
-        fetch('https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services', {
+        fetch('https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

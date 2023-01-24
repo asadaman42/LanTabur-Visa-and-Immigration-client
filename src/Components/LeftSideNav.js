@@ -8,7 +8,7 @@ const LeftSideNav = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('https://11th-assignment-08-11-22-server-asadaman42.vercel.app/services')
+        fetch('https://lantabur-visa-and-immigration-server-asadaman42.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
